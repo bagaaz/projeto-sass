@@ -31,14 +31,14 @@ $img-width: 45%;
 }
 
 @function calculateRem($size) {
-    @return $size / 16px * 1rem;
+    @return calc($size / 16px) * 1rem;
 }
 @mixin fontSize($size) {
     font-size: calculateRem($size);
 }
 
 
-@import 'header', 'footer', 'about', 'article', 'collection';
+@import 'header', 'footer', 'about', 'article', 'collection', 'contact';
 
 $directions: top, bottom, left, right;
 $layout-margin-size: 10px;
@@ -47,7 +47,7 @@ $layout-margin-size: 10px;
     %no-margin-#{$direction} {margin-#{$direction}: 0;}
     %default-margin-#{$direction} {margin-#{$direction}: $layout-margin-size;}
     %double-margin-#{$direction} {margin-#{$direction}: $layout-margin-size * 2;}
-    %half-margin-#{$direction} {margin-#{$direction}: $layout-margin-size / 2;}
+    %half-margin-#{$direction} {margin-#{$direction}: calc($layout-margin-size / 2);}
 }
 
 .main {
